@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from './login/login.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'administracion-web';
+
+  userValid: boolean = false;
+
+  constructor (public login: LoginService) {}
+
+  ngOnInit(): void {
+    this.userValid = this.login.usuarioIngresa;
+  }
+
 }

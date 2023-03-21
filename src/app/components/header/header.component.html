@@ -1,0 +1,30 @@
+<div class="bg-white h-14 flex">
+
+    <div class="w-1/6 bg-white h-full border-r border-gray-400" >
+        <div class="text-2xl flex items-center text-center justify-start h-full font-bold mx-2" >
+            Software
+
+            <span class="font-black text-blue-600" >
+                TEST
+            </span>
+        </div>
+    </div>
+        
+    <div class="text-black flex items-center justify-between px-2 w-5/6">
+        
+        <div class="text-lg text-gray-500" >
+            Bienvenido {{nombreUsuario}}
+        </div>
+
+        <div class="text-sm text-gray-500 font-bold w-fit flex items-center space-x-2">
+            <div>
+                {{ date | date : "EEEE dd/MM/yyyy h:mm:ss a"  }}
+            </div>
+            <button (click)="salir()" title="Salir" class="bg-gray-500/50 text-white rounded-full w-8 h-8 flex justify-center items-center animate-pulse">
+                <i class="fas fa-power-off"></i>
+            </button>
+        </div>
+
+    </div>
+
+</div>

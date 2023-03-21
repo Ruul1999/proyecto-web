@@ -1,0 +1,55 @@
+<div style="background-image: url(../assets/fondoSystem.jpg); background-attachment: fixed; background-size: cover;" 
+class="h-screen w-full p-10 flex items-center justify-center">
+<div class="bg-transparent/25 shadow-md shadow-slate-800 rounded-lg px-8 pt-6 pb-8 mb-4 flex flex-col justify-center" >
+
+  <div class="w-full h-full flex justify-center items-center">
+    <img src="../assets/LogoRX.png" class=" w-32 ">
+  </div>
+
+  <form [formGroup]="usuario" (ngSubmit)="usuarioIngresaSubmit()" class="my-3">
+
+    <div class="mb-4 space-y-3">
+      <label class="block text-gray-400 text-sm font-bold">
+        Numero de ususario:
+      </label>
+      <input
+        formControlName="numeroRegistro" 
+        class="shadow appearance-none border rounded w-full px-3 text-gray-400 focus:outline-none focus:shadow-outline" type="number" placeholder="Registro">
+    </div>
+
+    <div class="mb-4 space-y-3">
+      <label class="block text-gray-400 text-sm font-bold">
+        Contrasena:
+      </label>
+      <input 
+      formControlName="contrasena"
+      class="shadow appearance-none border rounded w-full px-3 text-gray-700 focus:outline-none focus:shadow-outline" type="password" placeholder="Clave">
+    </div>
+
+    <div class="flex flex-col items-center justify-center ">
+      <p *ngIf="!usuario.valid" class="text-red-500 text-sm text-left">*Ingresasa tus datos</p>
+      <p *ngIf="usuarioValido" class="text-red-500 text-sm text-left">*Datos incorrectos</p>
+
+      <button 
+        [disabled]="!usuario.valid"
+        class="bg-gradient-to-r from-indigo-500 via-purple-500 to-red-200 text-white font-bold py-2 px-4 w-full rounded focus:outline-none focus:shadow-outline transition hover:scale-90 duration-200" 
+        type="submit">
+        Ingresar
+      </button>
+
+      <a class="font-bold text-sm mt-1 cursor-pointer text-blue-500 hover:text-blue-800">
+        Olvidaste tu contrasena?
+      </a>
+
+      <a class="font-bold text-sm mt-1 cursor-pointer text-blue-500 hover:text-blue-800">
+        Registrarse
+      </a>
+
+    </div>
+
+  </form>
+  <p class="text-center text-gray-500 text-xs">
+    &copy;2023 RX Corp. Infomracion confiable.
+  </p>
+</div>
+</div>
