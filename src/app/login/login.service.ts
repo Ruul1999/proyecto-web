@@ -8,7 +8,9 @@ import {environment} from 'src/environments/environment';
 })
 export class LoginService {
 
-  usuarioIngresa: boolean = false
+  usuarioIngresa: boolean = false;
+  muestraDatosIncorrectoMessage: boolean = false;
+  muestraSpinerPocesando: boolean = false;
 	private baseUrl: string = environment.baseUrl;
 
   usuario: any = [];
@@ -25,7 +27,12 @@ export class LoginService {
       console.log(resp);
       if(resp != null){
         this.usuarioIngresa = true;
+        this.muestraDatosIncorrectoMessage = false;
+        this.muestraSpinerPocesando = false;
         this.usuario = resp;
+      }else{
+        this.muestraDatosIncorrectoMessage = true;
+        this.muestraSpinerPocesando = false;
       }
     });
 

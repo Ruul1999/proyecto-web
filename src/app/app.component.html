@@ -1,7 +1,11 @@
-<div *ngIf="login.usuarioIngresa" class="h-screen w-full bg-gray-200"  >
-  <app-header></app-header>
-  <app-sidebar  ></app-sidebar>
-  <router-outlet></router-outlet>
+<div *ngIf="login.usuarioIngresa" class="w-full fixed">
+  <app-header class="bg-white h-14 flex"></app-header>
+  <div class="flex">
+    <app-sidebar class="w-1/6 h-screen bg-gray-700 px-4 pt-5 z-10 "></app-sidebar>
+    <div class="bg-gray-200 h-screen w-5/6 z-0 break-words overflow-x-auto p-5" >
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
 
 <app-login *ngIf="!login.usuarioIngresa"></app-login>

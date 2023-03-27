@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   usuarioValido:boolean = false;
 
-  constructor( private login: LoginService, private http: HttpClient ) { }
+  constructor( public login: LoginService, private http: HttpClient ) { }
 
   ngOnInit(): void {
   }
@@ -28,8 +28,11 @@ export class LoginComponent implements OnInit {
   usuarioIngresaSubmit() {
     console.log(this.usuario.value);
 
-    this.login.validarUsuarioIngresa(parseInt(this.usuario.value.numeroRegistro!), this.usuario.value.contrasena!);
-    this.usuarioValido = !this.login.usuarioIngresa;
+    this.login.muestraSpinerPocesando = true;
+    setTimeout(() => {
+      this.login.validarUsuarioIngresa(parseInt(this.usuario.value.numeroRegistro!), this.usuario.value.contrasena!);
+      this.usuarioValido = !this.login.usuarioIngresa;
+    }, 3000);
 
   }
 

@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EmpleadosComponent } from './empelados/pages/empleados/empleados.component';
+import { EmtypagesComponent } from './empelados/pages/emtypages/emtypages.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  { path: 'empleados', component: EmpleadosComponent },
+  { path: 'inicio', component: EmtypagesComponent },
   // {path: 'loginUser', component: LoginComponent },
-  // { path: '',   redirectTo: 'loginUser', pathMatch: 'full' },
-  // { path: '**',   redirectTo: 'loginUser', pathMatch: 'full' }
+  { path: '',   redirectTo: 'inicio', pathMatch: 'full' },
+  { path: '**',   redirectTo: 'inicio', pathMatch: 'full' }
 ];
 
 @NgModule({

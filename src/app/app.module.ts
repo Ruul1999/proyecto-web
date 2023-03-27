@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { EmpleadosComponent } from './empelados/pages/empleados/empleados.component';
+import { EmtypagesComponent } from './empelados/pages/emtypages/emtypages.component';
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
@@ -20,7 +21,8 @@ registerLocaleData(localeEs, 'es');
     LoginComponent,
     SidebarComponent,
     HeaderComponent,
-    EmpleadosComponent
+    EmpleadosComponent,
+    EmtypagesComponent
   ],
   imports: [
     BrowserModule,

@@ -27,14 +27,21 @@ class="h-screen w-full p-10 flex items-center justify-center">
     </div>
 
     <div class="flex flex-col items-center justify-center ">
-      <p *ngIf="!usuario.valid" class="text-red-500 text-sm text-left">*Ingresasa tus datos</p>
-      <p *ngIf="usuarioValido" class="text-red-500 text-sm text-left">*Datos incorrectos</p>
+      <p *ngIf="!usuario.valid" class="text-red-500 text-sm text-left animate-pulse">*Ingresa tus datos</p>
+      <p *ngIf="login.muestraDatosIncorrectoMessage" class="text-red-500 text-sm text-left animate-pulse">*Datos no validos</p>
 
       <button 
         [disabled]="!usuario.valid"
-        class="bg-gradient-to-r from-indigo-500 via-purple-500 to-red-200 text-white font-bold py-2 px-4 w-full rounded focus:outline-none focus:shadow-outline transition hover:scale-90 duration-200" 
+        class="bg-gradient-to-r from-indigo-500 via-purple-500 to-red-200 text-white font-bold py-2 px-4 w-full rounded 
+          focus:outline-none focus:shadow-outline transition hover:scale-90 duration-200 flex items-center justify-center" 
         type="submit">
-        Ingresar
+
+        <svg *ngIf="login.muestraSpinerPocesando" class="animate-spin h-5 w-5 mr-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-red-200 rounded-xl" viewBox="0 0 24 24"></svg>
+        
+        <p *ngIf="!login.muestraSpinerPocesando" >
+          Ingresar
+        </p> 
+
       </button>
 
       <a class="font-bold text-sm mt-1 cursor-pointer text-blue-500 hover:text-blue-800">
