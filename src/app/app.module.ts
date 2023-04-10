@@ -13,6 +13,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { EmpleadosComponent } from './empelados/pages/empleados/empleados.component';
 import { EmtypagesComponent } from './empelados/pages/emtypages/emtypages.component';
+import { MiperfilComponent } from './empelados/pages/miperfil/miperfil.component';
 registerLocaleData(localeEs, 'es');
 
 @NgModule({
@@ -22,7 +23,8 @@ registerLocaleData(localeEs, 'es');
     SidebarComponent,
     HeaderComponent,
     EmpleadosComponent,
-    EmtypagesComponent
+    EmtypagesComponent,
+    MiperfilComponent
   ],
   imports: [
     BrowserModule,

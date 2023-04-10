@@ -9,7 +9,7 @@ import { LoginService } from 'src/app/login/login.service';
 export class HeaderComponent implements OnInit {
 
   date: any = '';
-  nombreUsuario: string = ''
+  nombreUsuario: string | undefined= ''
 
   constructor(private login: LoginService) { }
 

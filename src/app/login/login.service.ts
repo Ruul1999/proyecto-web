@@ -2,18 +2,29 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {environment} from 'src/environments/environment';
+import { Usuario } from '../empelados/interfaces/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  usuarioIngresa: boolean = false;
+  usuarioIngresa: boolean = true;
   muestraDatosIncorrectoMessage: boolean = false;
   muestraSpinerPocesando: boolean = false;
 	private baseUrl: string = environment.baseUrl;
 
-  usuario: any = [];
+  usuario: Usuario = {};
+ 
+  // usuario: Usuario = {
+  //   alias: "Raul Dominguez Hernandez",
+  //   contrasena: "hesoyam",
+  //   correo: "dominguezraul1999gmail.com",
+  //   idUsuario: 1,
+  //   nombreCompleto: "Raul Dominguez Hernandez",
+  //   numeroRegistro: 5815472,
+  //   tipoUsuario: 1
+  // };
 
   constructor(private http: HttpClient ) { }
 
